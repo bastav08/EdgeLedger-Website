@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
 
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -16,11 +16,41 @@ p {
 
 body {
     font-family: 'Roboto', sans-serif;
+    line-height: 1.4;
 }
 
 /* Utility Classes */
 .text-primary {
     color: #93cb52;
+}
+.l-heading {
+    font-size: 4rem;
+    margin-bottom: 0.75rem;
+    line-height: 1.1;
+}
+
+.lead {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+}
+
+.btn {
+    display: inline-block;
+    color: #fff;
+    background: #93cb52;
+    padding: 0.5rem 2rem;
+    /* Button tags have default border, not in this case because tag is a(link) */
+    border: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    background: #7ab436;
+}
+
+.btn-dark {
+    background: #333;
+    color: #fff;
 }
 
 /* Navbar */
@@ -54,4 +84,38 @@ body {
 #navbar ul li a:hover{
     background: #93cb52;
     border-radius: 5px;
+}
+
+/* Showcase */
+#showcase {
+    /* at this point the image only covers the div */
+    background: #333 url(../img/showcase.jpg) no-repeat center center/cover;
+    /* 100Vh is Relative to 100% of the height of the viewport */
+    /* will cover the whole viewport plus the area accounted for the sticky navbar */
+    height: 100vh;
+    color: #fff;
+}
+
+/* Justify content: along Primary axis */
+/* align items: along secondary axis */
+#showcase .showcase-content {
+    display: flex;
+    flex-direction: column;
+    /* center both horizontal and vertical */
+    text-align: center;
+    /* set height:100% means height equal to the container it is in(showcase)*/
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    padding: 0 2rem;
+    /* Overlay */
+    /* position absolute within a relative container */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    /* rgba represents red green blue alpha(transparency) */
+    /* we only want the background to have the opacity not the text */
+    background-color: rgba(0,0,0,0.4);
 }
